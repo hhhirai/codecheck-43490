@@ -8,34 +8,34 @@ public class App {
 		URL url;
 		for (int i = 0, l = args.length; i < l; i++) {
 			String input = args[i];
-			System.out.println(input);
-//		try {
-//			url = new URL("http://challenge-server.code-check.io/api/hash?q=" + input);
-//
-//        HttpURLConnection connection = null;
-//        try {
-//            connection = (HttpURLConnection) url.openConnection();
-//            connection.setRequestMethod("GET");
-//
-//            if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-//                try (InputStreamReader isr = new InputStreamReader(connection.getInputStream(),
-//                                                                   StandardCharsets.UTF_8);
-//                    BufferedReader reader = new BufferedReader(isr)) {
-//                    String line = "";
-//                    while ((line = reader.readLine()) != null) {
-//                        System.out.println(line);
-//                    }
-//                }
-//            }
-//
-//         } finally {
-//            if (connection != null) {
-//                connection.disconnect();
-//            }
-//        }
-//        } catch (IOException e) {
-//        e.printStackTrace();
-//        }
+
+		try {
+			url = new URL("http://challenge-server.code-check.io/api/hash?q=" + input);
+
+        HttpURLConnection connection = null;
+        try {
+            connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+
+            if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                try (InputStreamReader isr = new InputStreamReader(connection.getInputStream(),
+                                                                   StandardCharsets.UTF_8);
+                    BufferedReader reader = new BufferedReader(isr)) {
+                    String line = "";
+                    while ((line = reader.readLine()) != null) {
+                        System.out.println(line);
+                    }
+                }
+            }
+
+         } finally {
+            if (connection != null) {
+                connection.disconnect();
+            }
+        }
+        } catch (IOException e) {
+        e.printStackTrace();
+        }
 	}
 	}
 
