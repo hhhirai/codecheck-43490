@@ -1,20 +1,18 @@
-package codecheck;
-
+package jp.co.jal.jalcard.myjalcard;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStreamReader;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.net.URL;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-
-public class App {
+public class API {
 	public static void main(String[] args) {
 
-		URL url = new URL("http://challenge-server.code-check.io/api/hash?p=fizz");
+		URL url;
+		try {
+			url = new URL("http://challenge-server.code-check.io/api/hash?p=fizz");
 
         HttpURLConnection connection = null;
         try {
@@ -36,8 +34,9 @@ public class App {
                 connection.disconnect();
             }
         }
-    } catch (IOException e) {
+        } catch (IOException e) {
         e.printStackTrace();
     }
+	}
 
 }
