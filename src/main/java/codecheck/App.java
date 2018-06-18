@@ -12,7 +12,7 @@ public class App {
 
 		URL url;
 		try {
-			url = new URL("http://challenge-server.code-check.io/api/hash?p=" + args);
+			url = new URL("http://challenge-server.code-check.io/api/hash=" + args);
 
         HttpURLConnection connection = null;
         try {
