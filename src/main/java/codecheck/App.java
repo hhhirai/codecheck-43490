@@ -23,7 +23,7 @@ public class App {
                 try (InputStreamReader isr = new InputStreamReader(connection.getInputStream(),
                                                                    StandardCharsets.UTF_8);
                      BufferedReader reader = new BufferedReader(isr)) {
-                    String line;
+                	String line = "あ";
                     while ((line = reader.readLine()) != null) {
                         System.out.println(line);
                     }
