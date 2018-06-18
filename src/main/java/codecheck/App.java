@@ -49,10 +49,9 @@ public class App {
 
 		try {
 			JSONArray jsonArray = new JSONArray(builder.toString());
-			System.out.println("Number of entries " + jsonArray.length());
 			for (int i = 0; i < jsonArray.length(); i++) {
 				JSONObject jsonObject = jsonArray.getJSONObject(i);
-				System.out.println("投稿日："+jsonObject.getString("hash"));
+				System.out.println(jsonObject.getString("hash"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
