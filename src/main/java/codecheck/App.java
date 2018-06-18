@@ -19,19 +19,16 @@ public class App {
             connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
 
-            int result = connection.getResponseCode();
-            System.out.println(result);
-
-//            if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-//                try (InputStreamReader isr = new InputStreamReader(connection.getInputStream(),
-//                                                                   StandardCharsets.UTF_8);
-//                    BufferedReader reader = new BufferedReader(isr)) {
-//                    String line = "あ";
-//                    while ((line = reader.readLine()) != null) {
-//                        System.out.println(line);
-//                    }
-//                }
-//            }
+            if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                try (InputStreamReader isr = new InputStreamReader(connection.getInputStream(),
+                                                                   StandardCharsets.UTF_8);
+                    BufferedReader reader = new BufferedReader(isr)) {
+                    String line = "";
+                    while ((line = reader.readLine()) != null) {
+                        System.out.println(line);
+                    }
+                }
+            }
          } finally {
             if (connection != null) {
                 connection.disconnect();
