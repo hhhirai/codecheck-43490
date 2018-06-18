@@ -7,7 +7,7 @@ public class App {
 
 		URL url;
 		for (int i = 0, l = args.length; i < l; i++) {
-			String input = String.format("argv[%s]: %s", i, args[i]);
+			String input = args[i];
 			System.out.println(input);
 //		try {
 //			url = new URL("http://challenge-server.code-check.io/api/hash?q=" + input);
