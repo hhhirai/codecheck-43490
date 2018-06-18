@@ -7,7 +7,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
-public class API {
+public class App {
 	public static void main(String[] args) {
 
 		URL url;
