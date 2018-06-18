@@ -10,13 +10,13 @@ import java.nio.charset.StandardCharsets;
 public class App {
 	public static void main(String[] args) {
 
-		URL url;
+		URL uri;
 		try {
-			url = new URL("http://challenge-server.code-check.io/api/hash?p=fizz");
+			uri = new URL("http://challenge-server.code-check.io/api/hash?p=fizz");
 
         HttpURLConnection connection = null;
         try {
-            connection = (HttpURLConnection) url.openConnection();
+            connection = (HttpURLConnection) uri.openConnection();
             connection.setRequestMethod("GET");
 
             if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
