@@ -3,9 +3,9 @@ package codecheck;
 public class App {
 	public static void main(String[] args) {
 
-		Strin uri = "http://challenge-server.code-check.io/api/hash?q=";
+		String uri = "http://challenge-server.code-check.io/api/hash?q=";
 
-		Strin input = "fizz";
+		String input = "fizz";
 
 		StringBuilder builder = new StringBuilder();
 		HttpClient client = new DefaultHttpClient();
