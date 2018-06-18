@@ -11,8 +11,10 @@ public class App {
 	public static void main(String[] args) {
 
 		URL url;
+		for (int i = 0, l = args.length; i < l; i++) {
+			String input = String.format("argv[%s]: %s", i, args[i]);
 		try {
-			url = new URL("http://challenge-server.code-check.io/api/hash?q=" + args);
+			url = new URL("http://challenge-server.code-check.io/api/hash?q=" + input);
 
         HttpURLConnection connection = null;
         try {
@@ -29,6 +31,7 @@ public class App {
                     }
                 }
             }
+
          } finally {
             if (connection != null) {
                 connection.disconnect();
@@ -36,7 +39,8 @@ public class App {
         }
         } catch (IOException e) {
         e.printStackTrace();
-    }
+        }
+	}
 	}
 
 }
