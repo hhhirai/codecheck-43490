@@ -19,7 +19,7 @@ public class App {
 
 		try {
 			url = new URL("http://challenge-server.code-check.io/api/hash?q=" + input);
-			StringBuilder builder = new StringBuilder();
+			StringBuilder result = new StringBuilder();
 
 			HttpURLConnection connection = null;
         try {
@@ -48,7 +48,7 @@ public class App {
         }
 
 		try {
-			JSONArray jsonArray = new JSONArray(builder.toString());
+			JSONArray jsonArray = new JSONArray(result.toString());
 			for (int i = 0; i < jsonArray.length(); i++) {
 				JSONObject jsonObject = jsonArray.getJSONObject(i);
 				System.out.println(jsonObject.getString("hash"));
